@@ -8,7 +8,7 @@ app.use(
   origin: "https://valeriaerceg.glitch.me",
   methods: ['GET']
 })
-)
+);
 
 app.listen(port, function () {
   console.log('Server is running on PORT',port);
