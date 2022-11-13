@@ -9,25 +9,10 @@ app.use(
   methods: ['GET']
 })
 )
-// app.put("/images", (req, res) => {
-//   res.json({'upload/images/':+ req.params.path
-//   })
-// })
 
 app.listen(port, function () {
   console.log('Server is running on PORT',port);
 });
-// app.use((req, res, next) => {
-
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
-//   res.append('Access-Control-Allow-Origin', ['*']);
-//   res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-//   res.append('Access-Control-Allow-Headers', 'Content-Type');
-//   next();
-// });
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -39,4 +24,3 @@ const router = require('./Router');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/upload', router);
-// app.use(cors());
