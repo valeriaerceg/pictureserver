@@ -61,26 +61,5 @@ app.get('/images1', function (req, res){
     }
   })
 });
-  
 
-// router.get('/images', function(req, res) {
-//   var image = req.params['3aaefd03-6423-4324-903f-687b30cd7234.png'];
-//   res.header('Content-Type', "image");
-//   fs.readFile(image, 'utf-8', function(_error, data){
-//     if(err){
-//       res.end(404);
-//     }
-//     res.send(data)    
-//   });
-// });
-
-
-// router.get('/images', async function(req, res) {  
-//   res.status(201).json({success: "Hit the /photos endpoint, but nothing is here :)"});
-//   console.log (fstat.readdirSync('public/images'));
-// });
-
-
-
-  
   module.exports = router;
