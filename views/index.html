@@ -8,55 +8,8 @@
     <link href="styles.css" rel="stylesheet"/>
   </head>
   
-  <body>
-    <!-- <center>
-    <p>
-    Here are your pictures
-    </p>
-    <p>New Image Upload</p>
-      <form method="post" action="upload/post" enctype="multipart/form-data">
-        <input type="file" name="image">
-        <button type="submit" name="upload">Post</button>
-      </form>
-    
-    </center> -->
-  <div id="myData"></div>
-    <script>
-        fetch('images.json')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                appendData(data);
-            })
-            .catch(function (err) {
-                console.log('error: ' + err);
-            });
-        function appendData(data) {
-            var mainContainer = document.getElementById("images.json");
-            for (var i = 0; i < data.length; i++) {
-                var div = document.createElement("div");
-                div.innerHTML = {
-    "images": [
-      {
-        "location": "file:///Users/valeriaerceg/Desktop/valeriaercegpictureserver/public/images/3aaefd03-6423-4324-903f-687b30cd7234.png",
-        "uuid": "3aaefd03-6423-4324-903f-687b30cd7234.png"
-      },
-      {
-
-        "location": "file:///Users/valeriaerceg/Desktop/valeriaercegpictureserver/public/images/fd7b90ca-a75e-45ca-a62d-8aa6dc0513d3.png",
-        "uuid": "fd7b90ca-a75e-45ca-a62d-8aa6dc0513d3.png"
-      }
-    ]
-}
-
-                mainContainer.appendChild(div);
-            }
-        }
-    </script>
+  <body>    
 
   </body>
 </html> 
-
-
 

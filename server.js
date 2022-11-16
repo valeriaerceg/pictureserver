@@ -3,12 +3,13 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(
+app.options('*', cors());
+
+app.use
   cors({
-  origin: "https://valeriaerceg.glitch.me",
-  methods: ['GET']
-})
-)
+  origin: 'http://127.0.0.1:3000',
+  "Access-Control-Allow-Methods": "GET, OPTIONS, POST, PUT"
+}),
 
 app.listen(port, function () {
   console.log('Server is running on PORT',port);
@@ -24,3 +25,12 @@ const router = require('./Router');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/upload', router);
+
+
+
+// methods: ['GET'],
+//   headers: new Headers({
+// 'Access-Control-Allow-Origin': '',
+// 'Access-Control-Allow-Methods': 'GET',
+// 'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+// })
