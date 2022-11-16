@@ -5,11 +5,12 @@ const port = process.env.PORT || 3000;
 
 app.options('*', cors());
 
-app.use
+app.use(
   cors({
   origin: 'http://127.0.0.1:3000',
   "Access-Control-Allow-Methods": "GET, OPTIONS, POST, PUT"
-}),
+}));
+
 
 app.listen(port, function () {
   console.log('Server is running on PORT',port);
@@ -28,9 +29,3 @@ app.use('/upload', router);
 
 
 
-// methods: ['GET'],
-//   headers: new Headers({
-// 'Access-Control-Allow-Origin': '',
-// 'Access-Control-Allow-Methods': 'GET',
-// 'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-// })
