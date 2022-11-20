@@ -24,44 +24,4 @@ router.post('/post', upload.single('image'), async function (req, res) {
     return res.status(200).json({ name: filename });
   });
 
-
-
-router.get('/images', async function(req, res) {  
-  res.status(201).json({
-    "images": [
-        {
-            "image": "/Users/valeriaerceg/Desktop/valeriaercegpictureserver/public/images/3aaefd03-6423-4324-903f-687b30cd7234.png" 
-        },
-        {
-            "image": "/Users/valeriaerceg/Desktop/valeriaercegpictureserver/public/images/3c668713-9c11-4238-833d-1f4834d017d2.png"
-        },
-        {
-            "image": "/Users/valeriaerceg/Desktop/valeriaercegpictureserver/public/images/3e14fc34-2d68-4aea-a815-40e078a42ef3.png"
-        },
-        {
-            "image": "/Users/valeriaerceg/Desktop/valeriaercegpictureserver/public/images/7a9e2512-1fa2-4659-a8c3-8eec9853f6c6.png"
-        },
-        {
-            "image": "/Users/valeriaerceg/Desktop/valeriaercegpictureserver/public/images/b1cf568e-4ac2-446c-835b-57631dc37657.png"
-        },
-        {
-            "image": "/Users/valeriaerceg/Desktop/valeriaercegpictureserver/public/images/fd7b90ca-a75e-45ca-a62d-8aa6dc0513d3.png"
-        }
-    ]
-}
-);
-  // console.log (fstat.readdirSync('public/images'));
-});
-
-app.get('/images1', function (req, res){
-  res.sendFile("/public/images/fd7b90ca-a75e-45ca-a62d-8aa6dc0513d3.png", options, function (err) {
-    if (err) {
-      console.log (err);
-      next(err)
-    } else {
-      console.log('Sent:', "/public/images/fd7b90ca-a75e-45ca-a62d-8aa6dc0513d3.png");
-    }
-  })
-});
-
   module.exports = router;
