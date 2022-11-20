@@ -23,5 +23,5 @@ router.post('/post', upload.single('image'), async function (req, res) {
     }
     return res.status(200).json({ name: filename });
   });
-  
+
   module.exports = router;
