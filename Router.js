@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-
+const cors = require('cors');
 const router = express.Router();
 const upload = require('./uploadMiddleware');
 const Resize = require('./Resize');
@@ -9,7 +9,7 @@ const fstat  = require('fs');
 const res = require('express/lib/response');
 
 
-router.get('/', cors(), async function (req, res) {
+router.get('/', async function (req, res) {
   res.render('index');
 
 });
@@ -26,7 +26,7 @@ router.post('/post', upload.single('image'), async function (req, res) {
 
 
 
-router.get('/images', cors(), async function(req, res) {  
+router.get('/images', async function(req, res) {  
   res.status(201).json({
     "images": [
         {
